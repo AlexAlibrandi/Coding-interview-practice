@@ -39,6 +39,26 @@ public class AnagramTest {
         Arrays.sort(wordArr);
         return String.valueOf(wordArr);
     }
+    //______________________________________________________________________________________________
+
+    // Testing if two strings are anagrams using the count array
+    public static String countArrayAnagramTest(String word1, String word2){
+        if (word1.length() != word2.length()){
+            return "The two words are not anagrams";
+        }
+
+        int count [] = new int[256];
+        for (int i = 0; i < word1.length(); i++){
+            count[word1.charAt(i)]++;
+            count[word2.charAt(i)]--;
+        }
+        for (int i = 0; i < 256; i++){
+            if (count[i] != 0){
+                return "The two strings are not anagrams";
+            }
+        }
+        return "The two strings are anagrams";
+    }
 
     public static void main (String[] args){
 
@@ -61,6 +81,14 @@ public class AnagramTest {
         System.out.println("Testing anagrams using arrays.sort");
         System.out.println("_________________________________________________");
         System.out.println(anagramTesterUsingArraysSort(string1,string2));
+
+        System.out.println();
+        System.out.println("____________________________________________________________");
+        System.out.println();
+
+        System.out.println("Testing anagrams using count array");
+        System.out.println("_________________________________________________");
+        System.out.println(countArrayAnagramTest(string1,string2));
     }
 
 }
