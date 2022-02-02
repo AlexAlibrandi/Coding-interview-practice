@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class AnagramTest {
 
+    //method testing if two strings are anagrams using string methods
     public static String anagramTesterUsingStringMethods(String word1, String word2){
         if (word1.length() != word2.length())
             return "The two words are not anagrams";
@@ -21,7 +22,9 @@ public class AnagramTest {
         }
         return "The two words are anagrams";
     }
+    //____________________________________________________________________________________________
 
+    //method testing if two strings are anagrams using arrays.sort
     public static String anagramTesterUsingArraysSort(String word1, String word2){
         String sorted1 = sortChars(word1);
         String sorted2 = sortChars(word2);
